@@ -3,50 +3,26 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Design extends JFrame {
-    //private JTextArea textArea;
-    // private JButton btn;
-    //private TextPanel textArea;
-    // private Toolbar toolbar;
+public class MainFrame extends JFrame {
+
     private FormPanel formPanel;
-    public Design(){
+    public MainFrame(){
         super("Burgers");
-
         formPanel = new FormPanel();
-        // textArea = new TextPanel();
-        // btn = new JButton("SUBMIT");
-        // toolbar = new Toolbar();
-
-        // btn.addActionListener(new ActionListener() {
-
-        //public void actionPerformed(ActionEvent e) {
-        //textArea.appendText("burgers\n");
-        // }
-        // });
+        setJMenuBar(createMenuBar());
         add(formPanel,BorderLayout.CENTER);
-        //add(textArea,BorderLayout.CENTER);
-        // add(btn,BorderLayout.SOUTH);
-        //add(toolbar,BorderLayout.NORTH);
-
         setSize(700,600);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true );
-
-
-
-
     }
-
-
 
     private JMenuBar createMenuBar(){
         JMenuBar menuBar = new JMenuBar();
 
-        JMenu fileMenu = new JMenu("File");
-        JMenu editMenu=  new JMenu("Edit");
-        JMenu viewMenu = new JMenu("View");
-        JMenu helpMenu=  new JMenu("Help");
-
+        JMenu fileMenu = new JMenu("Buy Burger");
+        JMenu editMenu=  new JMenu("Customer Information");
+        JMenu viewMenu = new JMenu("Feedback and Query");
+        JMenu helpMenu=  new JMenu("Edit and View");
 
         JMenuItem projectMenu = new JMenuItem("Project");
         JMenuItem moduleMenu=  new JMenuItem("Module");
@@ -54,7 +30,6 @@ public class Design extends JFrame {
 
         newMenu.add(projectMenu);
         newMenu.add(moduleMenu);
-
 
         JMenu openMenu=  new JMenu("Open");
         JMenuItem settingsMenu = new JMenuItem("Settings");
@@ -65,9 +40,6 @@ public class Design extends JFrame {
                 System.exit(0);
             }
         });
-
-
-
 
         JCheckBoxMenuItem imageMenu = new JCheckBoxMenuItem("Image");
         imageMenu.setSelected(true);
@@ -89,14 +61,11 @@ public class Design extends JFrame {
         fileMenu.add(openMenu);
         fileMenu.add(settingsMenu);
         fileMenu.add(exitMenu);
-
-
+        
         menuBar.add(fileMenu);
         menuBar.add(editMenu);
         menuBar.add(viewMenu);
         menuBar.add(helpMenu);
-
-
         return menuBar;
     }
 }

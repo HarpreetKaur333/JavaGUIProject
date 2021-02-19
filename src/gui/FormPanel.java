@@ -3,33 +3,26 @@ import javax.swing.border.Border;
 import java.awt.*;
 
 public class FormPanel extends JPanel {
-    private JLabel cost;//print cost
+    private JLabel cost;
     private JLabel costField;
-    //private JTextField costField;
-    private JLabel maxTopping;//max topping
+    private JLabel maxTopping;
     private JLabel toppingField;
-    //private JTextField toppingField;
-    private JLabel tPrice;//price of topping
+    private JLabel tPrice;
     private JTextField priceField;
     private JComboBox burgerType;
-    private JLabel burger;//to print burger type
+    private JLabel burger;
     private JComboBox options;
-    private JLabel chooseOrder;//to print order
+    private JLabel chooseOrder;
     private JComboBox sToppings;
-    private JLabel selectToppings;//to print toppings
+    private JLabel selectToppings;
     private JLabel title;
-    private  JList orderList;//to select burger order
+    private  JList orderList;
     private JMenuBar buyBurger;
 
 
 
 
     FormPanel(){
-        // Dimension dim = getPreferredSize();
-        //dim.width = 1300;
-        //setPreferredSize(dim);
-
-
         //created objects
         cost = new JLabel("Print cost:");
         costField = new JLabel();
@@ -49,6 +42,8 @@ public class FormPanel extends JPanel {
         buyBurger = new JMenuBar();
 
 
+
+        //Image icon=Toolkit.getDefaultToolkit().getImage("C:\\Users\\admin\\IdeaProjects\\JavaGUIProject");
 
         // title.setSize(600, 100);
         //to bold and increase font size
@@ -78,9 +73,9 @@ public class FormPanel extends JPanel {
         options.setPreferredSize(new Dimension(50,50));
         sToppings.setPreferredSize(new Dimension(170,50));
         orderList.setPreferredSize(new Dimension(170,80));
-        orderList.setBackground(Color.PINK);
+       // orderList.setBackground(Color.PINK);
 
-        setBackground(Color.cyan);//for background color
+        //setBackground(Color.cyan);//for background color
 
 
         //setup burger type combo
@@ -111,14 +106,6 @@ public class FormPanel extends JPanel {
         orderListModel.addElement("3");
         orderList.setModel(orderListModel );
         orderList.setBorder(BorderFactory.createEtchedBorder());
-
-
-
-
-
-        // Border inner = BorderFactory.createTitledBorder("Brampton Burgers");
-        //Border outer = BorderFactory.createEmptyBorder(7,7,7,7);
-        //setBorder(BorderFactory.createCompoundBorder(outer,inner));
 
         setLayout(new GridBagLayout());
         GridBagConstraints gc = new GridBagConstraints();
