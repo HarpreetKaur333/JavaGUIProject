@@ -1,3 +1,6 @@
+
+package gui;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -6,23 +9,27 @@ import java.awt.event.ActionListener;
 public class MainFrame extends JFrame {
 
     private FormPanel formPanel;
+    //private TextPanel textArea;
+
     public MainFrame(){
         super("Burgers");
         formPanel = new FormPanel();
+       // textArea = new TextPanel();
         setJMenuBar(createMenuBar());
         add(formPanel,BorderLayout.CENTER);
         setSize(700,600);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true );
+
     }
 
-    private JMenuBar createMenuBar(){
+       private JMenuBar createMenuBar(){
         JMenuBar menuBar = new JMenuBar();
 
         JMenu fileMenu = new JMenu("Buy Burger");
         JMenu editMenu=  new JMenu("Customer Information");
-        JMenu viewMenu = new JMenu("Feedback and Query");
-        JMenu helpMenu=  new JMenu("Edit and View");
+        JMenu viewMenu = new JMenu("Feedback/Query");
+        JMenu helpMenu=  new JMenu("Edit/View");
 
         JMenuItem projectMenu = new JMenuItem("Project");
         JMenuItem moduleMenu=  new JMenuItem("Module");
@@ -61,11 +68,13 @@ public class MainFrame extends JFrame {
         fileMenu.add(openMenu);
         fileMenu.add(settingsMenu);
         fileMenu.add(exitMenu);
-        
+
         menuBar.add(fileMenu);
         menuBar.add(editMenu);
         menuBar.add(viewMenu);
         menuBar.add(helpMenu);
         return menuBar;
+
     }
 }
+
